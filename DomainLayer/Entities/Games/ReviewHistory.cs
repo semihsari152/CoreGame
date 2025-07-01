@@ -1,5 +1,6 @@
 ﻿using DomainLayer.Common;
 using DomainLayer.Entities.Users;
+using DomainLayer.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,7 @@
 ﻿using DomainLayer.Common;
+using DomainLayer.Entities.Games;
+using DomainLayer.Entities.Social;
+using DomainLayer.Entities.System;
 using DomainLayer.Enums;
 using System;
 using System.Collections.Generic;

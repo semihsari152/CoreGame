@@ -57,5 +57,9 @@ namespace DomainLayer.Entities.Social
         // Computed Properties
         public int NetScore => LikeCount - DislikeCount;
         public bool HasReplies => ReplyCount > 0;
+
+        public string? RelatedEntityTitle { get; set; } // Cache için
+        public string? SenderName { get; set; } // Cache için  
+        public string? SenderAvatarUrl { get; set; } // Cache için
     }
 }
