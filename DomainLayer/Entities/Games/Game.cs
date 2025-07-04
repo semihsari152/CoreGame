@@ -39,7 +39,6 @@ namespace DomainLayer.Entities.Games
         public string? TrailerUrl { get; set; }
 
         // Platform ve Kategori
-        public Platform SupportedPlatforms { get; set; } // Flags enum
         public GameStatus Status { get; set; }
 
         // Derecelendirme ve İstatistikler

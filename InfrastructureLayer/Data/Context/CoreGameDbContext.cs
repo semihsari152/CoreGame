@@ -90,6 +90,13 @@ namespace InfrastructureLayer.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            // GLOBAL: Tüm cascade delete'leri restrict yap
+            foreach (var foreignKey in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys()))
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
             // Apply all configurations
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CoreGameDbContext).Assembly);
 

@@ -82,19 +82,19 @@ namespace InfrastructureLayer.Data.Configurations
 
             // Relationships
             builder.HasMany(x => x.GameCategories)
-                .WithOne(x => x.Game)
-                .HasForeignKey(x => x.GameId)
-                .OnDelete(DeleteBehavior.Cascade);
+              .WithOne(x => x.Game)
+              .HasForeignKey(x => x.GameId)
+              .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(x => x.GamePlatforms)
                 .WithOne(x => x.Game)
                 .HasForeignKey(x => x.GameId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(x => x.GameTags)
                 .WithOne(x => x.Game)
                 .HasForeignKey(x => x.GameId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(x => x.GameReviews)
                 .WithOne(x => x.Game)

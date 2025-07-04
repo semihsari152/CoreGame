@@ -1,4 +1,5 @@
-using InfrastructureLayer;
+using ApplicationLayer;     
+using InfrastructureLayer;  
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,8 +8,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Add Persistence layer
-builder.Services.AddInfrastructure(builder.Configuration);
+// Add Application and Infrastructure layers
+builder.Services.AddApplication();                    // ? Application layer
+builder.Services.AddInfrastructure(builder.Configuration); // ? Infrastructure layer
 
 var app = builder.Build();
 

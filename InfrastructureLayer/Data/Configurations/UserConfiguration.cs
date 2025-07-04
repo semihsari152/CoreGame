@@ -88,7 +88,7 @@ namespace InfrastructureLayer.Data.Configurations
             builder.HasMany(x => x.UserGameLists)
                 .WithOne(x => x.User)
                 .HasForeignKey(x => x.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(x => x.UserAchievements)
                 .WithOne(x => x.User)

@@ -65,16 +65,16 @@ namespace InfrastructureLayer.Data.Configurations
             builder.HasIndex(x => x.CreatedDate);
             builder.HasIndex(x => x.GroupKey);
 
-            // Relationships
+            // DÜZELT (yeni):
             builder.HasOne(x => x.User)
                 .WithMany(x => x.Notifications)
                 .HasForeignKey(x => x.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);  
 
             builder.HasOne(x => x.Sender)
                 .WithMany()
                 .HasForeignKey(x => x.SenderId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Restrict); 
 
             builder.HasMany(x => x.NotificationActions)
                 .WithOne(x => x.Notification)
